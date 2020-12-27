@@ -1,0 +1,22 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.post-title {
+  @include relative-font-size(1.6);
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(1.6);
+  }
+}
+
+.post-link {
+  @include relative-font-size(1.2);
+}
+
+.site-title {
+  @include relative-font-size(1.45);
+}
+

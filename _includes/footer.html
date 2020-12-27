@@ -1,0 +1,55 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+<!--     <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          <li>
+          {% if site.email %}
+            {% include icon-email.html username=site.email %}
+          {% endif %}
+
+          {% if site.github_username %}
+            {% include icon-github.html username=site.github_username %}
+          {% endif %}
+
+          {% if site.linkedin_username %}
+            {% include icon-linkedin.html username=site.linkedin_username %}
+          {% endif %}
+
+          {% if site.twitter_username %}
+            {% include icon-twitter.html username=site.twitter_username %}
+          {% endif %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+    
+    <!-- Add for mathjax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [['$','$']]
+          },
+          TeX: {
+            equationNumbers: {
+              autoNumber: "all"
+            }
+          }
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <!-- End mathjax -->
+
+  </div>
+
+</footer>
