@@ -19,4 +19,8 @@ My personal web
 
 ## Remark
 
-    This code template, cloned from j-mark-hou.github.io, lacks support for mathjax. I modified part of the code in footer.html, which add some support for mathjax. It happily leads to consistency between Typora and Jekyll. 
+    - This code template, cloned from j-mark-hou.github.io, lacks support for mathjax. 
+    
+    - I modified part of the code in footer.html, which add some support for mathjax. It happily leads to consistency between Typora and Jekyll. 
+
+    - Put math into double $. 
