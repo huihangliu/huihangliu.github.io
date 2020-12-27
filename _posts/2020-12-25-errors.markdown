@@ -146,6 +146,7 @@ $$
 $$
 
 In linear model, we have
+
 $$
 =\quad \sigma_{\varepsilon}^{2}+\left[f\left(x_{0}\right)-\mathrm{E} \hat{f}_{p}\left(x_{0}\right)\right]^{2}+\left\|\mathbf{h}\left(x_{0}\right)\right\|^{2} \sigma_{\varepsilon}^{2}
 $$
