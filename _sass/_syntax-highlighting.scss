@@ -1,34 +1,52 @@
 /**
  * Syntax highlighting styles
  */
-code{
-    padding: 1px 4px;
-    margin: 0 2px;
-    font-size: 90%;
-    border-radius: 3px;
-    color: #000;
-    background-color: rgba(0, 0, 0, 0.06);
-    border: 1px solid #d7d0d2;
-    font-family: Consolas,"Courier New",monospace,sans-serif;
+
+ pre {
+    margin: 0;
+    border: 0px;
+    background-color:unset;
+}
+  
+code {
+    display: block;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 10pt;
+    overflow-x: auto;
+    padding: 0.5em;
+    scrollbar-width: thin;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+ code{
+    // padding: 1px 4px;
+    // margin: 0 2px;
+    // font-size: 90%;
+    // border-radius: 3px;
+    // color: #000;
+    // background-color: rgba(0, 0, 0, 0.06);
+    // border: 1px solid #d7d0d2;
+    // font-family: Consolas,"Courier New",monospace,sans-serif;
 }
 
 pre {
-    border: 0px;
-    background-color:unset;
-    margin: 12px 0;
-    padding: 8px 12px;
-    //  overflow-x: auto;
-     word-wrap: break-word;      /* IE 5.5-7 */
-     white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-     white-space: pre-wrap;      /* current browsers */
-     > code {
-         margin: 0;
-         padding: 0;
-        font-size: 13px;
-        color:#d1d1c9;
-        border: none;
-        background-color: #272822
-     }
+    // border: 0px;
+    // background-color:unset;
+    // margin: 12px 0;
+    // padding: 8px 12px;
+    // //  overflow-x: auto;
+    //  word-wrap: break-word;      /* IE 5.5-7 */
+    //  white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    //  white-space: pre-wrap;      /* current browsers */
+    //  > code {
+    //      margin: 0;
+    //      padding: 0;
+    //     font-size: 13px;
+    //     color:#d1d1c9;
+    //     border: none;
+    //     background-color: #272822
+    //  }
 }
 
 .highlighter-rouge .highlight {
