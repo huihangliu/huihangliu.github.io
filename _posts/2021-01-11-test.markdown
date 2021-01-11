@@ -32,3 +32,23 @@ data.label
 
 x$label = data.label$label
 ```
+
+<pre><code class="r">
+ID<-seq(1,40,1)
+
+label<-rep(1, times=40)
+
+label1<-data.frame(ID,label)
+
+ID<-seq(41,80,1)
+
+label<-rep(0, times=40)
+
+label2<-data.frame(ID,label)
+
+data.label<-rbind(label1,label2)
+
+data.label
+
+x$label = data.label$label
+</code></pre>
