@@ -3,7 +3,7 @@
 ---
 $content-width: 60%; 
 
-@import "minima";
+@import "minima", "syntax-highlighting";
 
 .post-title {
   @include relative-font-size(1.6);
