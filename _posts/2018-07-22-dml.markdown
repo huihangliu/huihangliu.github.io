@@ -5,6 +5,8 @@ date:   2018-07-22 00:00:00 -0400
 categories: statistics, machine learning
 ---
 
+Ref: [jmarkhou's Blog](http://jmarkhou.com/dml/)
+
 [Interesting paper](https://arxiv.org/abs/1608.00060) by some fairly serious MIT-related econometrics/statistics people (let's call this paper DML) on how to estimate some low-dimensional parameters of interest in the presence of high-dimensional nuisance parameters.  The intuition is quite nice, though the actual theoretical results are maybe not as generally applicable as they might appear at first.
 
 ### I. Setup and results

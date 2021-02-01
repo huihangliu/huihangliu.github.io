@@ -24,3 +24,5 @@ My personal web
     - I modified part of the code in footer.html, which add some support for mathjax. It happily leads to consistency between Typora and Jekyll. 
 
     - Put math into double $. 
+    
+    - Run Jekyll in linux by ```bundle exec jekyll serve```. 
