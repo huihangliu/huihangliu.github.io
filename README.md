@@ -26,3 +26,4 @@ My personal web
     - Put math into double $. 
     
     - Run Jekyll in linux by ```bundle exec jekyll serve```. 
+    - or run ```bundle exec jekyll serve --force_polling --livereload``` with a watcher auto reload the web page with 15%-20% increase of CPU usage. 
