@@ -17,6 +17,21 @@ My personal web
     changes you make are automatically reflected by the running service
     - this is useful for blogging locally and testing out how your changes look
 
+## YAML
+
+*layout*: post; *title* is a string; *date*: yyyy-mm-dd; *categories* is a list sep by comma; *visible*: true or false. 
+
+- if *visible* is false, then the post will not be listed in the home page, but it's still accessible by url. 
+
+## VS Code
+
+Add the following settings in the workspace to set the terminal as wsl
+    {
+        //Set terminal as wsl
+        "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe" // this is the defalut wsl distro
+    }
+Note that tmux in vs code looks bad, please set the default shell as *zsh*. 
+
 ## Remark
 
     - This code template, cloned from j-mark-hou.github.io, lacks support for mathjax. 
