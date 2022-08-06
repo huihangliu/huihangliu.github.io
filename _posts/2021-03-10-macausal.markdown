@@ -1,9 +1,10 @@
 ---
-layout: 	post
-title:  	"Model Averaging and Causal Effects"
-date:   	2021-03-10
+layout: 	  post
+title:  	  "Model Averaging and Causal Effects"
+author:   	"Huihang Liu"
+date:   	  2021-3-10
 categories: statistics, causality
-visible:	false
+visible:	  true
 ---
 
 ## Causal Diagram

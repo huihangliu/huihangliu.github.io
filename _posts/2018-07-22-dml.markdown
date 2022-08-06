@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  "Double machine learning"
-date:   2018-07-22 00:00:00 -0400
+layout: 		post
+title:  		"Double machine learning"
+author:			"jmarkhou"
+date:   		2018-07-22 00:00:00 -0400
 categories: statistics, machine learning
 ---
 

@@ -5,6 +5,8 @@ FROM ruby:2.5
 COPY . /blog
 # use this as the default dir for executing stuff
 WORKDIR /blog
+# install bundler version 2.2.14 which is writen in Gemfile.lock
+RUN gem install bundler -v 2.2.14
 # install required gems. 
 RUN bundle install
 

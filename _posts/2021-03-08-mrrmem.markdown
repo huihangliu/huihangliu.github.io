@@ -1,9 +1,10 @@
 ---
-layout: 	post
-title:  	"Multi-response regression & Measurement error model"
-date:   	2021-03-08
+layout: 	   post
+title:  	   "Multi-response regression & Measurement error model"
+author:   	"Huihang Liu"
+date:   	   2021-3-8
 categories: statistics
-visible: false
+visible:    true
 ---
 
 * TOC

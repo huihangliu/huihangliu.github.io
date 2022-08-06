@@ -1,9 +1,9 @@
 ---
-layout: 	post
-title:  	"Model Averaging when Over-fitting"
-date:   	2021-03-12
+layout: 	  post
+title:  	  "Model Averaging when Over-fitting"
+date:   	  2021-3-12
 categories: statistics, causality
-visible:	false
+visible:	  true
 ---
 
 **模型**: $$y=\sum_{k=1}^{\infty} \beta_{k} x_{k} + e$$. 这种假设是合理的, 例如使用傅里叶基函数或者小波基函数对非参数模型进行回归/预测. 

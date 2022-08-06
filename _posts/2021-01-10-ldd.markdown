@@ -1,5 +1,5 @@
 ---
-layout: 	post
+layout: 	  post
 title:    	"Linear Double Descent"
 author:   	"Huihang Liu"
 date:     	2021-1-10
