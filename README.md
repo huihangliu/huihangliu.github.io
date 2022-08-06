@@ -46,3 +46,12 @@ Note that tmux in vs code looks bad, please set the default shell as *zsh*.
     
     - Run Jekyll in linux by ```bundle exec jekyll serve```. 
     - or run ```bundle exec jekyll serve --force_polling --livereload``` with a watcher auto reload the web page with 15%-20% increase of CPU usage. 
+
+## mathjax
+
+See the bottom of ```includes/head.html```. 
+
+1. We use ```mathjax version 3```. 
+2. Use single `$` for inline math. 
+3. Add ```auto-numbering```: https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html. 
+4. Add user defined ```macro``` support. 
