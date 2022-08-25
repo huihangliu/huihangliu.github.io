@@ -55,3 +55,18 @@ See the bottom of ```includes/head.html```.
 2. Use single `$` for inline math. 
 3. Add ```auto-numbering```: https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html. 
 4. Add user defined ```macro``` support. 
+
+## Local preview
+
+Now, I use vscode in windows to code and preview markdown files. 
+
+VSCode uses katex to rander the tex math expressions. 
+I define some macros for katex, which is the same with latex and mathjax. 
+The macros are defined in local file ```KaTex_macroFile.json```. 
+The ```\label``` and ```\eqref``` function is not perfect. But it could work with some bug. 
+
+We could use ```align``` environment surrounded by ```$$``` for math display style.  
+And single ```$``` for inline style. 
+Use ```\label{A.1}``` and ```\eqref{A.1}``` for math cross-reference. 
+
+Use ```[label](#section-label)``` to link a section. 

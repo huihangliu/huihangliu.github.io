@@ -1,0 +1,148 @@
+---
+layout: 	   post
+title:  	   "Model Averaging For Uncertainty of Errors"
+author:   	"Huihang Liu"
+date:   	   2022-8-7
+categories: statistics, machine learning, model averaging
+---
+
+* TOC
+{:toc}
+
+## 1. Motivation
+
+Different assumptions on the random noise would result in different MLE of parameters in regression tasks. 
+
+### 1.1 Sufficiency
+
+> Errors are very often Gaussian, but not necessary. 
+
+Random errors in the tasks of linear regressions are often assumped to be Gaussian. 
+However, errors are not necessary be Gaussian in practice. 
+
+
+**Central Limit Theorem** (CLT) tells us that Gaussian distributions are very common because so many of the random things in nature come from a sum of many small contributions. 
+Specifically, given a random variable $x$ distributed according to a function $X(x)$, if $X(x)$ has finite second moment, then given another random variable $y$ defined as the average of many instances of $x$, i.e.
+$$
+\begin{align}
+  \begin{aligned}
+    y \triangleq \frac{1}{n} \sum_{i=1}^n x_i,
+  \end{aligned}
+\end{align}
+$$
+where the distribution $Y(y)$ is asymptotically Gaussian. 
+
+However, there are plenty of cases where 
+1. the constituents of an underlying error mechanism have a distribution that does not have a finite second moment; the Cauchy distribution is the most common example [^1]. 
+2. an error is simply not the sum of many small underlying contributions.
+3. the sample size is too small to conduct CLT [^1]. 
+
+Therefore, a consideration of non-gaussian error will, of course, make some difference. 
+
+### 1.2 Necessity
+
+> Mis-specify the distribution of random error would produce statistical loss. 
+
+We use ```L1pack``` package (version ) in R to perform least absolute deviations regression. 
+
+### 1.3 Relationship between noise and loss
+
+> There are some connection between the distribution of random noise and the form of loss. 
+
+The choice of the estimation loss can be determined by the distribution of model errors.  
+<font color="orange">Maximum likelihood estimate (MLE) is most likely to produce better estimator (but a better predictor??) </font>  
+In linear regressions, it is well known that MLE equals to LSE when random noise follows normality assumption. 
+The LAD estimate (or quantile regression at the mean) also arises as the MLE if the errors have a Laplace distribution.
+
+So, it is nature to ask what happend when the noise follows other distributions? and what about non-square loss? 
+I wrote in seminar.md that the transfermation of samples, such as over-sampling and under-sampling, could be determined by the transfermation of loss (for example weighting). 
+
+Notice that estimation loss (we discussed above) is different from the prediction loss. 
+
+> Prediction loss specifies how prediction errors are penalized. You do not choose it, it is given. (Usually, it is the client that specifies it. If the client is not capable of doing that mathematically, the analyst should strive to do that by listening carefully to the client's arguments.) If the prediction error causes the client's loss (e.g. financial loss) to grow quadratically and symmetrically about zero, you are facing square prediction loss. If the client's loss grows linearly and symmetrically about zero, you are facing absolute prediction loss. There are plenty of other possibilities for types of prediction loss you may be facing, too.  
+(From [Richard Hardy](https://stats.stackexchange.com/users/53690/richard-hardy) in [Why is using squared error the standard when absolute error is more relevant to most problems?](https://stats.stackexchange.com/q/470628))
+
+
+Actual prediction loss is likely to be asymmetric and not more likely to grow quadratically than linearly with prediction error.  
+This is a very common situation in business where the losses are asymmetric and highly nonlinear with rapidly escalating costs in one direction of forecast error but not the other. From [Aksakal](https://stats.stackexchange.com/users/36041/aksakal) in [Why is using squared error the standard when absolute error is more relevant to most problems?](https://stats.stackexchange.com/q/470628)
+Therefore, in prediction, we do not have to use squared loss. 
+
+[Algorithms for $\ell_1$ linear regression](https://chaoxuprime.com/posts/2019-03-28-l1-linear-regression.html)
+
+### 1.4 Some interesting discussion
+
+[Mean absolute error OR root mean squared error?](https://stats.stackexchange.com/questions/48267/mean-absolute-error-or-root-mean-squared-error)
+
+[Why is using squared error the standard when absolute error is more relevant to most problems?](https://stats.stackexchange.com/questions/470626/why-is-using-squared-error-the-standard-when-absolute-error-is-more-relevant-to)
+
+## 2. Literature Review
+
+### Model selection method
+
+
+### Gaussian-based model averaging method
+
+The most commonly used model avearging method, Mallows model averaging, was developed under Gaussian noise. 
+
+### Non-Gaussian Error
+
+Zeckhauser (1970) [^2] considered the following a class of power distribution
+$$
+\begin{align}
+  \begin{aligned}
+    f(z ; \mu, \sigma, \theta)=k(\sigma, \theta) \exp \left\{-\left|\frac{z-\mu}{\sigma}\right|^{\theta}\right\} , 
+  \end{aligned}
+  \label{A.2}
+\end{align}
+$$
+where $f$ is the density of $z$, $k(\sigma, \theta)=[2 \sigma \Gamma(1+1 / \theta)]^{-1}$.  
+The ranges of the variables are $-\infty<z<\infty$, $-\infty<\mu<\infty$, $\sigma>0$ and $\theta>0$. 
+
+
+
+
+
+## 3. Methodology
+
+In this blog, we only focus on the classical linear model as following
+$$
+\begin{align}
+  \begin{aligned}
+    y = \bx\t \bbeta + \veps, 
+  \end{aligned}
+  \label{A.3}
+\end{align}
+$$
+where $\bx=(x_1, \dots, x_p)\t$ is the vector of explaination variables and $\veps$ is a random error. 
+Suppose we have $n$ <font color="orange">independent</font> observations from the model. 
+Then we could re-write $\eqref{A.3}$ in matrix form
+$$
+\begin{align}
+  \begin{aligned}
+    \bY = \bX \bbeta + \bveps ,
+  \end{aligned}
+  \label{A.4}
+\end{align}
+$$
+where $\bY=(Y_1,\dots,Y_n)$, $\bX = (\bX_1\t, \dots, \bX_n\t)\t$, $\bX_i\t$ is the $i$-th observation of $\bx$. 
+
+First, let's consider the noise given by $\eqref{A.2}$. 
+The parameters are estimated by MLE. 
+The likelihood of parameters $(\bbeta, \sigma, \theta)$ given the entire sample is
+$$
+\begin{align}
+  \begin{aligned}
+    L (\bbeta, \sigma, \theta) 
+    & = \prod_{i=1}^{n} f \left(Y_{i} \mid \bX_{i}\t \bbeta, \sigma, \theta \right) \\
+    & = k^{n}(\sigma, \theta) \exp \left(-\frac{S}{\sigma^{\theta}}\right) , 
+  \end{aligned}
+\end{align}
+$$
+where $S=\sum_{i=1}^{n} \left| Y_{i} - \bX_{i} \bbeta \right|^{\theta}$. 
+
+
+# Reference
+
+[^1]: Physics StackExchange: [Are random errors necessarily Gaussian?](https://physics.stackexchange.com/questions/400824/are-random-errors-necessarily-gaussian?newreg=742fe6673bc3449a8ae386fb69866988)
+
+[^2]: Zeckhauser, R. and Thompson, M., 1970. Linear regression with non-normal error terms. The Review of Economics and Statistics, pp.280-286. url: https://www.jstor.org/stable/1926296
