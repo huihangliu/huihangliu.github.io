@@ -35,7 +35,7 @@ The state-of-the-art causal treatment effect estimation approaches for time seri
 - [3. dynamic treatment regimes](#3-dynamic-treatment-regimes).
 
 The following figure is a road-map of this note. 
-![](./.asserts/Causal.jpg)
+![](../assets/Causal.jpg)
 
 ### 1 Time-invariant Treatment Effect
 - **<font color=red>What is time-invariant treatment effect?</font>** 
@@ -54,7 +54,7 @@ The following figure is a road-map of this note.
 - This tool goes by an **assumption** called *common trends* or *parallel trends* that uses the change of the outcome of the control group as a counterfactual for the treatment group in the absence of the treatment.
 
 The following figure is an illustration of the DID method. 
-![](./.asserts/20220825223025.png)
+![](../assets/20220825223025.png)
 
 - If $t<T$ and $t>T$ denotes the pre- and post- treatment periods, respectively, then we can calculate the DID measure using the average treatment effect of the treated (ATT) metrics as follows[^1]:
 
@@ -90,7 +90,7 @@ The following figure is an illustration of causal impact method. See [this blog]
 - Subfig 1 (original): 黑色实线为被处理样本的实际观测结果, 蓝色虚线为根据某个控制样本模拟的被处理样本的结果, 蓝色区域为置信区间.
 - Subfig 2 (pointwise): 蓝色虚线为被处理样本的实际观测结果与模拟结果的差值, 可以看到实施处理后, 结果的差值是显著为正的.
 - Subfig 3 (cumulative): 蓝色虚线为实施处理后的累加值, 是持续增大的, 可见处理有明显的正向作用.
-![](./.asserts/202208260003001.png)
+![](../assets/202208260003001.png)
 
 - Causal impact learns the relationship between the treatment and control group before any intervention and predicts the counterafctual series after the treatment. This method relies on state-space models as follows:
 
@@ -124,7 +124,7 @@ $$
   + Alberto Abadie and Javier Gardeazabal. "*The economic costs of conflict: A case study of the Basque Country*". In: *American economic review 93.1 (2003), pp. 113-132*.
 
 The following figure is an illustration of SCM. See [this Q&A](https://www.zhihu.com/question/43497862/answer/1874867221) for details. 
-![](./.asserts/20220826001402.png)
+![](../assets/20220826001402.png)
 
 #### 1.4 Interrupted Time Series (ITS)
 
@@ -155,7 +155,7 @@ $$
   + $e$ is the error.
 
 The following figure is an illustration of the Standard ITS method.
-![](./.asserts/20220825223546.png)
+![](../assets/20220825223546.png)
 
 See [this Q&A](https://zhuanlan.zhihu.com/p/539045445) for details. 
 
