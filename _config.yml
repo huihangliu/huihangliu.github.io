@@ -23,6 +23,7 @@ github_username: huihangliu
 linkedin_username:
 permalink: /:title/
 include: ["_pages"]
+google_analytics: G-73B196N29F
 
 # Build settings
 markdown: kramdown
@@ -31,9 +32,11 @@ kramdown:
   syntax_highlighter: rouge
   auto_ids: true  # see onenote for details
   
-theme: minima
+# theme: minima
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

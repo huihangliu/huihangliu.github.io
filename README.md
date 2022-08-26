@@ -70,3 +70,7 @@ And single ```$``` for inline style.
 Use ```\label{A.1}``` and ```\eqref{A.1}``` for math cross-reference. 
 
 Use ```[label](#section-label)``` to link a section. 
+
+## Google-analysis
+
+I removed the `if` lines for analysis in `head.html`. 
