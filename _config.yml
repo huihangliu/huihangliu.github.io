@@ -32,8 +32,8 @@ kramdown:
   syntax_highlighter: rouge
   auto_ids: true  # see onenote for details
   
-# theme: minima
-remote_theme: jekyll/minima
+theme: minima
+# remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
